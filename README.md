@@ -1,6 +1,8 @@
 # Marketing common data modelling challenge
 	Welcome to Marketing common data modelling challenge!
 
+## For the Answer of the test **CHECK DOWN**
+
 ## Task
 	We use map data from various ad platforms into a single one. it can help marketers with questions like: "Where clicks better on facebook or tiktok?"
 
@@ -66,3 +68,43 @@ To build the seeds, run `dbt seed` in the dbt Cloud console. Once the seeds have
 
 	Q: What if there're no MCDM sctructure field in raw datasource data?
 	A: So you started understending the main goal of this task :-)	Suggest wich field or fields corresponds to MCDM ones by their meaning. If there're no such fields, then probably datasource just doesnt got them
+
+## Answer of the task
+    ### Project Structure
+		Project/
+		├── models/
+		│   ├── ads_basic_performance/
+		│   │   ├── schema.yml
+		│   │   ├── campaigns.sql
+		│   │   ├── engagements.sql
+		│   │   ├── conversions.sql
+		│   │   ├── channels.sql
+		│   │   ├── unified_ads.sql
+		│   │   ├── transformations/
+		│   │   │   ├── fb_ads.sql
+		│   │   │   ├── tw_ads.sql
+		│   │   │   ├── tk_ads.sql
+		│   │   │   ├── bing_ads.sql
+		|	|	├── conversion_cost/
+		|	|	|	├── ads_cc.sql
+		|	|	├── cost_per_click/
+		|	|	|	├── cpc_ads.sql
+		|	|	├── engagement_cost/
+		|	|	|	├── engage_cost.sql
+		|	|	├── imp_by_channel/
+		|	|	|	├── imp_by_channel.sql
+		├── seeds/
+		│   ├── src_ads_bing_all_data.csv
+		│   ├── src_ads_creative_facebook_all_data.csv
+		│   ├── src_ads_tiktok_ads_all_data.csv
+		│   ├── src_promoted_tweets_twitter_all_data.csv
+		├── dbt_project.yml
+		└── ...
+	### Link to *Looker studio* https://lookerstudio.google.com/reporting/7aa409f7-381a-4847-9e38-ec5464cf0755
+
+	### Set of instructions
+	- MCDM (ads_basic_performance) has been build using the raw data in the seed folder
+	- 4 files excluded to be used in the needed analysis and data exclusion (campaigns, channels, conversions, engagement)
+	- 1 file for the union of all the data need from the 4 csv files
+	- 1 schema file with the description of every file in the folder
+	- 1 folder which has 4 files of the data transformations extracted from the raw data
