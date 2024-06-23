@@ -34,9 +34,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   my_new_project:
     # Applies to all files under models/example/
-    staging:
-      materialized: view
-    core:
-      materialized: table
-    analytics:
-      materialized: table
+    +schema: marketing
+    customers:
+      +materialized: table
+    campaigns:
+      +materialized: table
+    engagements:
+      +materialized: table
+    conversions:
+      +materialized: table
+    channels:
+      +materialized: table

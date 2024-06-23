@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: campaigns
+    description: "A table containing marketing campaign data"
+    columns:
+      - name: campaign_id
+        description: "Unique identifier for each campaign"
+      - name: budget
+        description: "Budget allocated to the campaign"
+      - name: channel
+        description: "Marketing channel used for the campaign"
+
+  - name: engagements
+    description: "A table containing engagement data"
+    columns:
+      - name: campaign_id
+        description: "ID of the campaign associated with the engagement"
+      - name: engagement_date
+        description: "Date and time of the engagement"
+      - name: platform
+        description: "Platform where the engagement occurred"
+
+  - name: conversions
+    description: "A table containing conversion data"
+    columns:
+      - name: campaign_id
+        description: "ID of the campaign associated with the conversion"
+      - name: conversion_value
+        description: "Monetary value of the conversion"
+
+  - name: channels
+    description: "A table containing marketing channel data"
+    columns:
+      - name: channel_name
+        description: "Name of the marketing channel"
+      - name: engagements
+        description: "A table containing engagement data"
+      - name: conversions
+        description: "A table containing conversion data"
+      - name: impressions
+        description: "A table containing impressions data"
